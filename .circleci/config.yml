@@ -1,6 +1,4 @@
 version: 2
-orbs:
-  codecov: codecov/codecov@1.0.2
 jobs:
   build-and-test:
     working_directory: ~/pubsub-example/publisher-server
@@ -17,7 +15,8 @@ jobs:
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: password
     steps:
-      # Run tests
+      - checkout:
+          path: ~/pubsub-example
       - run:
           name: Install dependencies
           command: yarn install
