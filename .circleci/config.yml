@@ -3,7 +3,7 @@ jobs:
   build-and-test:
     working_directory: ~/pubsub-example/publisher-server
     docker:
-      - image: circleci/node:12.16.3
+      - image: "mileschou/xdebug:7.3"
         environment:
           PGHOST: 127.0.0.1
           PGUSER: circleci
@@ -28,8 +28,10 @@ jobs:
       - run:
           name: Run Tests and Collect Coverage Reports
           command: |
+            sudo docker-php-ext-enable xdebug
             ./cc-test-reporter before-build
             yarn test --maxWorkers=2 --collectCoverage=true
+            sudo vendor/bin/phpunit --coverage-clover clover.xml
             ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
 
 workflows:
