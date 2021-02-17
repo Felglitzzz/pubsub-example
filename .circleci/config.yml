@@ -3,7 +3,7 @@ jobs:
   build-and-test:
     working_directory: ~/pubsub-example/publisher-server
     docker:
-      - image: "mileschou/xdebug:7.3"
+      - image: circleci/node:12.16.3
         environment:
           PGHOST: 127.0.0.1
           PGUSER: circleci
@@ -13,6 +13,7 @@ jobs:
           CC_TEST_REPORTER_ID: 805a432463b5e1649d7cf1d01aaeb68fbe49e29e848d186aac6f6a4a1c95ecaa
           POSTGRES_USER: circleci
           POSTGRES_DB: circleci_test
+      - image: mileschou/xdebug:7.3
     steps:
       - checkout:
           path: ~/pubsub-example
