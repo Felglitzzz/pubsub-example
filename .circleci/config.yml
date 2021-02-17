@@ -30,7 +30,6 @@ jobs:
       - run:
           name: Run Tests and Collect Coverage Reports
           command: |
-            sudo docker-php-ext-enable xdebug
             ./cc-test-reporter before-build
             yarn test --maxWorkers=2 --collectCoverage=true --forceExit
             sudo vendor/bin/phpunit --coverage-clover clover.xml
