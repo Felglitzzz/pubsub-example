@@ -13,9 +13,6 @@ ratings:
 
 exclude_patterns:
   - "src/**/*.spec.ts"
-  - "src/**/*.model.ts"
   - "node_modules/"
   - "**/node_modules/"
-  - "src/**/migrations/**"
-  - "src/**/models/**"
 
