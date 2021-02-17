@@ -1,0 +1,19 @@
+version: "2"
+plugins:
+  tslint:
+    enabled: true
+  config:
+    config: tsconfig.json
+    extensions:
+    - .js
+    - .ts
+ratings:
+  paths:
+    - "src/**/*.ts"
+exclude_patterns:
+  - ".circleci/"
+  - "src/**/*.spec.ts"
+  - "src/**/*.model.ts"
+  - "node_modules/"
+  - "**/node_modules/"
+  - "src/database/migrations/"
