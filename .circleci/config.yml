@@ -75,3 +75,4 @@ workflows:
   run_test:
     jobs:
       - publisher-server-build-test
+      - subscriber-server-build-test
