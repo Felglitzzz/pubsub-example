@@ -38,21 +38,20 @@ export class AppService {
         message: `Publish to ${topic} successful`,
       };
 
-    try {
       for (const subscription of subscriptions) {
-        const payload: PublishPayload = {
-          topic,
-          data: publishTopicDto,
-        };
-        await axios.post(subscription.url, payload);
+        try {
+          const payload: PublishPayload = {
+            topic,
+            data: publishTopicDto,
+          };
+          await axios.post(subscription.url, payload);
+        } catch (e){
+        }
       }
-    } catch (error) {
-    } finally {
       return {
         statusCode: 200,
         message: `Publish to ${topic} successful`,
       };
-    }
   }
 
   async subscribeHandlerEndpoint(
