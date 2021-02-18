@@ -8,6 +8,7 @@ module.exports = {
   port: Number.parseInt(process.env.PGPORT, 2),
   username: process.env.PGUSER,
   password: process.env.PGPASSWORD,
+  ssl: process.env.NODE_ENV === 'production',
   database: `${process.env.PGDATABASE}${
     process.env.NODE_ENV == 'test' ? '_test' : ''
   }`,
