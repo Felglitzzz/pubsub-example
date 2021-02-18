@@ -38,10 +38,10 @@ describe('App Controller', () => {
       });
   });
 
-  describe('/POST /api/v1/publish/:topic', () => {
+  describe('/POST /publish/:topic', () => {
     it(`should throw error if no body is passed`, () => {
       return request(app.getHttpServer())
-        .post('/api/v1/publish/topic1')
+        .post('/publish/topic1')
         .send({})
         .expect(400)
         .expect((response) => {
@@ -55,7 +55,7 @@ describe('App Controller', () => {
       const topic = 'aTopic';
       const message = { msg: 'message payload' };
       return request(app.getHttpServer())
-        .post(`/api/v1/publish/${topic}`)
+        .post(`/publish/${topic}`)
         .send(message)
         .expect(201)
         .expect(() => {
@@ -64,10 +64,10 @@ describe('App Controller', () => {
     });
   })
 
-  describe('/POST /api/v1/subscribe/:topic', () => {
+  describe('/POST /subscribe/:topic', () => {
     it(`should throw error if no body is passed`, () => {
       return request(app.getHttpServer())
-        .post('/api/v1/subscribe/topic1')
+        .post('/subscribe/topic1')
         .send({})
         .expect(400)
         .expect((response) => {
@@ -79,7 +79,7 @@ describe('App Controller', () => {
 
     it(`should throw error if url is invalid`, () => {
       return request(app.getHttpServer())
-        .post('/api/v1/subscribe/topic1')
+        .post('/subscribe/topic1')
         .send({ url: 'invalidUrl' })
         .expect(400)
         .expect((response) => {
@@ -93,7 +93,7 @@ describe('App Controller', () => {
       const url = 'http://localhost:3001/test1';
       const topic = 'aTopic'
       return request(app.getHttpServer())
-        .post(`/api/v1/subscribe/${topic}`)
+        .post(`/subscribe/${topic}`)
         .send({ url })
         .expect(201)
         .expect(() => {

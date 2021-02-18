@@ -14,15 +14,14 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('api/v1/test1')
+  @Post('test1')
   async handleEvents1(
     @Body() payload: Payload,
   ): Promise<void> {
-    // console.log('pay-->>', payload);
     return this.appService.handlePayload(payload, );
   }
 
-  @Post('api/v1/test2')
+  @Post('test2')
   async handleEvents2(
     @Body() payload: Payload,
   ): Promise<void> {

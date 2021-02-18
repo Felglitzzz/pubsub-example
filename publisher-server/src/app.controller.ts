@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post, UsePipes } from '@nestjs/common';
+import { ApiBody } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import {
   PublishResponse,
@@ -18,7 +19,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('api/v1/subscribe/:topic')
+  @Post('subscribe/:topic')
   async subscribeHandlerEndpointDto(
     @Param() params: PublishTopicParamsDto,
     @Body() subscribeDto: SubscribeHandlerEndpointDto,
@@ -27,11 +28,14 @@ export class AppController {
     return this.appService.subscribeHandlerEndpoint(topic, subscribeDto);
   }
 
-  @Post('api/v1/publish/:topic')
+  @Post('publish/:topic')
   @UsePipes(PublishTopicPipe)
+  @ApiBody({ type: Object })
   publishTopic(
     @Param() params: PublishTopicParamsDto,
-    @Body() publishTopicDto: { [key: string]: any },
+    @Body() publishTopicDto: {
+      [key: string]: any
+    },
   ): Promise<PublishResponse> {
     const { topic } = params;
     return this.appService.publishTopic(topic, publishTopicDto);

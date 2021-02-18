@@ -38,11 +38,11 @@ describe('App Controller', () => {
       });
   });
 
-  describe('/POST /api/v1/test1', () => {
+  describe('/POST /test1', () => {
     it(`handle event payload passed to it`, () => {
       const payload = { message: "some payload" };
       return request(app.getHttpServer())
-        .post('/api/v1/test1')
+        .post('/test1')
         .send(payload)
         .expect(201)
         .expect(() => {
@@ -51,11 +51,11 @@ describe('App Controller', () => {
     });
   })
 
-  describe('/POST /api/v1/test2', () => {
+  describe('/POST /test2', () => {
     it(`handle event payload passed to it`, () => {
       const payload = { message: "some payload" };
       return request(app.getHttpServer())
-        .post('/api/v1/test2')
+        .post('/test2')
         .send(payload)
         .expect(201)
         .expect(() => {

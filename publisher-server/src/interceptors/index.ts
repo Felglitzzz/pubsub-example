@@ -15,7 +15,6 @@ export class ErrorsInterceptor implements NestInterceptor {
       .handle()
       .pipe(
         catchError(err => {
-          console.log('error-->>', err.code)
           if (err?.code === '23505') throw new ConflictException('Subscription already')
           return throwError(err)
         }),
