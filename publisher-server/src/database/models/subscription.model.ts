@@ -1,4 +1,5 @@
 import { IsUrl, IsUUID } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import {
   Column,
   Entity,
@@ -14,10 +15,12 @@ import { TopicModel } from './topic.model';
 export class SubscriptionModel {
   @PrimaryGeneratedColumn('uuid')
   @IsUUID('4')
+  @ApiPropertyOptional()
   id: string;
 
   @IsUrl()
   @Column({ name: 'url', nullable: false, type: 'text' })
+  @ApiProperty()
   url: string;
 
   @ManyToOne(() => TopicModel, (topic) => topic.subscription, {
@@ -25,5 +28,6 @@ export class SubscriptionModel {
     nullable: false,
   })
   @JoinColumn({ name: 'topic' })
+  @ApiProperty({ type: () => TopicModel })
   topic: TopicModel;
 }
