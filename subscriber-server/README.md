@@ -9,8 +9,8 @@ Subscriber Server subscribes to topics and prints message that is published to t
 ## Hosted API Link
 [Click Here](https://subscriber-server.herokuapp.com/)
 
-- first subscriber endpoint 1 - `/test1`
-- second subscriber endpoint - `/test2`
+- first subscriber endpoint - `/POST /test1`
+- second subscriber endpoint - `/POST /test2`
 
 
 Based on the requirement of the subscribing server to print message published, anyone clicking this link will need to have access to the console. Otherwise, run server locally
