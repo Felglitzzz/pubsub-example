@@ -32,7 +32,7 @@ const envVarsSchema = joi
 
 const { error, value: envVars } = envVarsSchema.validate(process.env);
 if (error) {
-  throw new Error(`Config validation error: ${error}`);
+  throw new Error(`Environment variables validation error: ${error}`);
 }
 
 export const config = {
