@@ -4,10 +4,23 @@
 
 ## Description
 
-Subscriber Server subscribes to topics and prints message that is published to that topic. 
+Subscriber Server subscribes to topics and prints message that is published to that topic.
+
+## Hosted API Link
+[Click Here](https://subscriber-server.herokuapp.com/)
+
+- first subscriber endpoint 1 - `/test1`
+- second subscriber endpoint - `/test2`
 
 
-## Starting the Subscriber Server
+Based on the requirement of the subscribing server to print message published, anyone clicking this link will need to have access to the console. Otherwise, run server locally
+
+
+## Swagger Documentation
+Click [here](https://subscriber-server.herokuapp.com/api) to view the API Documentation
+
+
+## Running the Subscriber Server Locally
 
 ```bash
 # clone the repo
@@ -27,23 +40,12 @@ yarn start:dev
 
 ```
 
-## Swagger Documentation
-```bash
-# Run app locally
-$ yarn start
-
-# Navigate the swagger documentation link
-# If baseUrl = http://localhost:9000, then api documentation is http://localhost:9000/api
-
-$ ${baseUrl}/api
-```
-
 ## Test
 
 ```bash
-# unit tests
+# run unit tests
 $ yarn test
 
-# with coverage
+# run unit tests with coverage
 $ yarn test:coverage
 ```
