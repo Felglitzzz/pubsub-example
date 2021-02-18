@@ -13,7 +13,7 @@ Subscriber Server subscribes to topics and prints message that is published to t
 # clone the repo
 $ git clone https://github.com/Felglitzzz/pubsub-example.git
 
-# cd to publisher server
+# cd to subscriber server
 $ cd subscriber-server/
 
 # Install Dependencies

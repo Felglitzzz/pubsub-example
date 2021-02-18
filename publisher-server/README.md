@@ -24,10 +24,10 @@ $ cd publisher-server/
 # Install Dependencies
 $ yarn install
 
-# Create .env file and pattern it after .env-sample file. Ensure db credentials is added to .env in this step
+# Create .env file and pattern it after .env-sample file. Ensure db credentials are added to .env in this step
 $ touch .env
 
-# Run Migration
+# Run migration
 $ yarn migrate
 
 # Run the application
@@ -42,16 +42,15 @@ $ yarn start
 
 # Navigate the swagger documentation link
 # If baseUrl = http://localhost:8000, then api documentation is http://localhost:8000/api
-
-$ ${baseUrl}/api
+${baseUrl}/api
 ```
 
 ## Test
 
 ```bash
-# unit tests
+# run unit tests
 $ yarn test
 
-# with coverage
+# run unit tests with coverage
 $ yarn test:coverage
 ```
