@@ -19,6 +19,9 @@ $ cd subscriber-server/
 # Install Dependencies
 $ yarn install
 
+# Create .env file and pattern it after .env-sample file. This step can be ignored though as there are default values for the environment variables
+$ touch .env
+
 # Run the application
 yarn start:dev
 
