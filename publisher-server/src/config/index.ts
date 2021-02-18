@@ -12,7 +12,7 @@ const envVarsSchema = joi
     NODE_ENV: joi
       .string()
       .valid(...validEnvironments)
-      .required(),
+      .default('development'),
     // database config
     PGHOST: joi.string().required(),
     PGUSER: joi.string().required(),
